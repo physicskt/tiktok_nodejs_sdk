@@ -114,3 +114,65 @@ TikTok Shop APIの認証には、以下の手順でHMAC-SHA256署名を生成す
 - `package.json`の依存関係は最小限に保つ
 - メジャーバージョンアップデートは慎重に検証
 - TypeScriptのバージョンは4.9.5以上を維持
+
+## コミットメッセージルール
+
+プロジェクトでは、明確で一貫性のあるコミットメッセージを使用します。以下のプレフィックスを使用してください：
+
+### プレフィックス
+
+- **feat**: 新機能の追加
+  - 例: `feat: Add ProductV202512Api support`
+  - 例: `feat: Implement new product search endpoint`
+
+- **fix**: バグ修正
+  - 例: `fix: Correct signature generation for multipart requests`
+  - 例: `fix: Handle undefined response in error cases`
+
+- **docs**: ドキュメントのみの変更
+  - 例: `docs: Update README with new API examples`
+  - 例: `docs: Add JSDoc comments to ProductV202502Api`
+
+- **refactor**: リファクタリング（機能追加やバグ修正を含まない）
+  - 例: `refactor: Simplify generateSign function`
+  - 例: `refactor: Extract common request logic`
+
+- **test**: テストの追加や修正
+  - 例: `test: Add unit tests for generateSign`
+  - 例: `test: Update integration tests for OrderV202407Api`
+
+- **chore**: ビルドプロセスやツールの変更
+  - 例: `chore: Update dependencies to latest versions`
+  - 例: `chore: Add build script to package.json`
+
+- **ci**: CI/CD設定の変更
+  - 例: `ci: Add GitHub Actions workflow`
+
+### フォーマット
+
+```
+<type>: <subject>
+
+[optional body]
+
+[optional footer]
+```
+
+### 例
+
+```
+feat: Add order cancellation endpoint to OrderV202507Api
+
+Implement the new order cancellation API endpoint
+with proper signature generation and error handling.
+
+Closes #123
+```
+
+### ルール
+
+- subjectは小文字で始め、末尾にピリオドを付けない
+- subjectは命令形で書く（"Added" ではなく "Add"）
+- 1行目は50文字以内を推奨
+- bodyは必要に応じて詳細を記述（72文字で改行）
+- 関連するissue番号があれば、footerに記載
